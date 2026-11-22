@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tenali Hansika | Full-Stack Developer Portfolio</title>
+<meta name="description" content="Portfolio of Tenali Hansika, final-year B.Tech CSIT student building full-stack and AI-based web applications.">
+<style>
+:root{--bg:#f7f8fb;--surface:#fff;--text:#14182b;--muted:#5b627a;--line:#e3e6ef;--accent:#4f46e5;--accent2:#0ea5e9;--chip:#eef0ff;--hdr:rgba(247,248,251,.9);--shadow:0 8px 30px rgba(30,40,90,.08);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1020;--surface:#161a30;--text:#eef0fa;--muted:#a2a9c4;--line:#262b49;--accent:#8b87ff;--accent2:#38bdf8;--chip:#202552;--hdr:rgba(13,16,32,.9);--shadow:0 8px 30px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1020;--surface:#161a30;--text:#eef0fa;--muted:#a2a9c4;--line:#262b49;--accent:#8b87ff;--accent2:#38bdf8;--chip:#202552;--hdr:rgba(13,16,32,.9);--shadow:0 8px 30px rgba(0,0,0,.35);color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hdr);z-index:10}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--hdr);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:800;letter-spacing:.3px}.logo span{color:var(--accent)}
+.links{display:flex;gap:22px;align-items:center;font-size:.93rem;color:var(--muted)}
+.links a:hover{color:var(--accent)}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;padding:6px 10px;cursor:pointer;font-size:.9rem}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center;padding:64px 0 48px}
+.tag{display:inline-block;background:var(--chip);color:var(--accent);padding:5px 14px;border-radius:99px;font-size:.85rem;font-weight:600}
+h1{font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.1;margin:16px 0 8px;letter-spacing:-1px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.15rem;color:var(--muted);margin:0 0 16px;font-weight:600}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:11px 22px;border-radius:12px;font-weight:600;border:1px solid var(--line);background:var(--surface);transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:#fff}
+.photo{justify-self:center;width:min(100%,330px);aspect-ratio:4/5;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:6px solid var(--surface);outline:2px solid var(--accent)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.stat b{display:block;font-size:1.6rem;color:var(--accent)}.stat span{font-size:.85rem;color:var(--muted)}
+section{padding:54px 0}
+h2{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.5px}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 4px;font-size:1.1rem}.meta{color:var(--muted);font-size:.88rem;margin:0 0 12px}
+.card ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}.card li{margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{background:var(--chip);color:var(--accent);padding:4px 12px;border-radius:99px;font-size:.82rem;font-weight:600}
+.about p{margin:0 0 14px;color:var(--muted);max-width:70ch}
+.tl{border-left:2px solid var(--line);padding-left:22px;display:grid;gap:22px}
+.tl div{position:relative}.tl div::before{content:"";position:absolute;left:-29px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.tl h3{margin:0;font-size:1.02rem}.tl p{margin:2px 0 0;color:var(--muted);font-size:.93rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact{text-align:center}.contact .btns{justify-content:center}
+footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:var(--muted);font-size:.88rem}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:36px}.photo{order:-1;width:min(70%,260px)}.stats{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.links a.h{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#top">Hansika<span>.</span></a>
+<nav class="links"><a class="h" href="#about">About</a><a class="h" href="#skills">Skills</a><a class="h" href="#projects">Projects</a><a class="h" href="#experience">Experience</a><a class="h" href="#contact">Contact</a><button id="theme" aria-label="Toggle theme">Theme</button></nav></div></header>
+<main id="top" class="wrap">
+<div class="hero">
+<div><span class="tag">Open to internships and entry-level roles</span>
+<h1>Hi, I’m <em>Tenali Hansika</em></h1>
+<p class="role">Full-Stack Developer · AI Enthusiast</p>
+<p class="lead">Final-year B.Tech student in Computer Science and Information Technology at Mohan Babu University. I build full-stack web applications and AI-based projects with React.js, TypeScript and FastAPI.</p>
+<div class="btns"><a class="btn p" href="#projects">View my work</a><a class="btn" href="https://github.com/tenalihansika-prog" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://www.linkedin.com/in/tenali-hansika-2787623b0" target="_blank" rel="noopener">LinkedIn</a></div></div>
+<div class="photo"><img src="photo.jpg" alt="Portrait of Tenali Hansika"></div>
+</div>
+<div class="stats"><div class="stat"><b>8.39</b><span>CGPA (B.Tech)</span></div><div class="stat"><b>2</b><span>Projects built</span></div><div class="stat"><b>2</b><span>Internships</span></div><div class="stat"><b>5</b><span>Certifications</span></div></div>
+
+<section id="about" class="about"><h2>About me</h2><p class="sub">A quick learner who enjoys turning ideas into working software.</p>
+<p>I have a strong foundation in Java, HTML and CSS, and I’m passionate about software development and problem-solving. I have hands-on experience in full-stack web development, AI-based applications and machine learning projects.</p>
+<p>I work well in teams, communicate clearly, and bring a strong analytical mindset to every problem I take on.</p></section>
+
+<section id="skills"><h2>Skills</h2><p class="sub">Technologies and tools I work with.</p>
+<div class="grid">
+<div class="card"><h3>Programming Languages</h3><div class="chips"><span class="chip">Java</span><span class="chip">HTML</span><span class="chip">CSS</span></div></div>
+<div class="card"><h3>Frameworks and Technologies</h3><div class="chips"><span class="chip">FastAPI</span><span class="chip">REST API</span></div></div>
+<div class="card"><h3>Core Computer Science</h3><div class="chips"><span class="chip">OOP</span><span class="chip">Data Structures</span><span class="chip">Algorithms</span></div></div>
+<div class="card"><h3>Developer Tools</h3><div class="chips"><span class="chip">VS Code</span><span class="chip">Git</span><span class="chip">GitHub</span></div></div>
+<div class="card"><h3>Soft Skills</h3><div class="chips"><span class="chip">Problem Solving</span><span class="chip">Teamwork</span><span class="chip">Communication</span><span class="chip">Quick Learner</span></div></div>
+</div></section>
+
+<section id="projects"><h2>Projects</h2><p class="sub">Things I have built.</p>
+<div class="grid">
+<div class="card"><h3>AI Waste Segregation</h3><p class="meta">1M1B AI for Sustainability Project · 2026</p>
+<div class="chips"><span class="chip">React.js</span><span class="chip">FastAPI</span><span class="chip">AI</span></div>
+<ul><li>Full-stack waste segregation web application with AI-based waste classification.</li><li>Authentication, waste history, disposal tips and waste pickup functionality.</li></ul></div>
+<div class="card"><h3>Movie Recommendation System</h3><p class="meta">Machine Learning · 2025</p>
+<div class="chips"><span class="chip">React.js</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">TMDB API</span><span class="chip">Gemini API</span></div>
+<ul><li>Responsive web app built with React.js, TypeScript and Vite, with navigation handled by React Router.</li><li>Fetches movie details from the TMDB API and generates recommendations with the Google Gemini AI API.</li><li>Version controlled with Git and GitHub.</li></ul></div>
+</div></section>
+
+<section id="experience" class="two"><div><h2>Experience</h2><p class="sub">Internships</p>
+<div class="tl"><div><h3>AI for Sustainability Virtual Internship</h3><p>1M1B · Certificate earned</p></div><div><h3>Full Stack Web Development Internship</h3><p>Apex Planet · Certificate earned</p></div></div></div>
+<div><h2>Education</h2><p class="sub">Academic background</p>
+<div class="tl"><div><h3>B.Tech, Computer Science and Information Technology</h3><p>Mohan Babu University, Tirupati · 2023 – Present · CGPA 8.39/10</p></div><div><h3>Intermediate (11th and 12th)</h3><p>VJ Junior College, Mangalagiri · 2021 – 2023 · 753/1000</p></div><div><h3>Secondary School Certificate</h3><p>S.S Talent School, Mangalagiri · 2020 – 2021 · 590/600</p></div></div></div></section>
+
+<section id="certs"><h2>Certifications</h2><p class="sub">Courses and programs completed.</p>
+<div class="chips"><span class="chip">Programming Using Java · Infosys Springboard</span><span class="chip">Web Development Fundamentals: HTML, CSS and JavaScript</span><span class="chip">AI and Machine Learning · FutureSkills Prime</span><span class="chip">AI for Sustainability · 1M1B</span><span class="chip">Full Stack Web Development · Apex Planet</span></div></section>
+
+<section id="contact" class="contact"><h2>Let’s work together</h2><p class="sub">I’m looking for internship and entry-level opportunities. Say hello!</p>
+<div class="btns"><a class="btn p" href="mailto:tenalihansika@gmail.com">tenalihansika@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/tenali-hansika-2787623b0" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/tenalihansika-prog" target="_blank" rel="noopener">GitHub</a></div></section>
+</main>
+<footer>© 2026 Tenali Hansika · Mangalagiri, India</footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById("theme");
+try{var s=localStorage.getItem("theme");if(s)r.setAttribute("data-theme",s)}catch(e){}
+b.addEventListener("click",function(){var d=r.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");var n=d==="dark"?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}})})();
+</script>
+</body>
+</html>
